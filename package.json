@@ -2,8 +2,30 @@
   "name": "kevin-pomelo-test",
   "version": "1.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:setup": "npm install && docker compose up -d && node ./scripts/setup-postgres.mjs",
+    "dev": "serverless offline"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@types/aws-lambda": "^8.10.147",
+    "@types/lodash": "^4.17.16",
+    "@types/pg": "^8.11.14",
+    "eslint": "^9.21.0",
+    "serverless-offline": "^14.4.0",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.0"
+  },
+  "dependencies": {
+    "@middy/core": "^6.1.6",
+    "ajv": "^8.17.1",
+    "aws-sdk": "^2.1692.0",
+    "axios": "^1.8.1",
+    "lodash": "^4.17.21",
+    "pg": "^8.15.5",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.7",
+    "source-map-support": "^0.5.21"
+  }
 }
