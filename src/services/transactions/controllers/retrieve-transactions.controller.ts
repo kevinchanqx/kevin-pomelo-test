@@ -1,6 +1,7 @@
 import { catchErrorHandler } from "@utils/error-handler";
 import { APIGatewayProxyEventV2 } from "aws-lambda";
 import { retrieveTransactions } from "../use-cases/retrieve-transactions.use-case";
+import { HttpStatusCode } from "axios";
 
 export const retrieveTransactionsController = async (
   event: APIGatewayProxyEventV2
@@ -9,7 +10,7 @@ export const retrieveTransactionsController = async (
   try {
     const transactions = await retrieveTransactions();
     return {
-      statusCode: 200,
+      statusCode: HttpStatusCode.Created,
       body: JSON.stringify({
         transactions,
       }),

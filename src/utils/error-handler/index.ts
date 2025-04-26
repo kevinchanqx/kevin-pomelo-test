@@ -51,14 +51,14 @@ export const catchErrorHandler = (err: unknown): APIGatewayProxyResultV2 => {
       name: err.name,
     });
     return {
-      statusCode: 500,
+      statusCode: HttpStatusCode.InternalServerError,
       body: JSON.stringify({ message: err.message }),
     };
   }
 
   console.error("[Unknown Error]", err);
   return {
-    statusCode: 500,
+    statusCode: HttpStatusCode.InternalServerError,
     body: JSON.stringify({ message: "Internal Server Error" }),
   };
 };

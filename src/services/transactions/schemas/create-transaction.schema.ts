@@ -1,6 +1,6 @@
 import { JSONSchemaType } from "ajv";
 import { CreateTransactionBody } from "../types/create-transaction.type";
-import { TransactionMethod } from "@shared/databases/postgres/tables/user.table";
+import { TransactionMethod } from "@shared/databases/postgres/tables/transaction.table";
 
 export const createTransactionBodySchema: JSONSchemaType<CreateTransactionBody> =
   {

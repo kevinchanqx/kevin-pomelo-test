@@ -1,7 +1,7 @@
 import {
   Transaction,
   TransactionRepo,
-} from "@shared/databases/postgres/tables/user.table";
+} from "@shared/databases/postgres/tables/transaction.table";
 import _ from "lodash";
 
 export const retrieveTransactions = async () => {

@@ -3,6 +3,7 @@ import { createTransaction } from "../use-cases";
 import { makeValidator } from "@utils/validator";
 import { createTransactionBodySchema } from "../schemas/create-transaction.schema";
 import { catchErrorHandler } from "@utils/error-handler";
+import { HttpStatusCode } from "axios";
 
 export const createTransactionController = async (
   event: APIGatewayProxyEventV2
@@ -22,7 +23,7 @@ export const createTransactionController = async (
     await createTransaction(body);
 
     return {
-      statusCode: 201,
+      statusCode: HttpStatusCode.Ok,
       body: JSON.stringify({ message: "Transaction created successfully" }),
     };
   } catch (err) {
