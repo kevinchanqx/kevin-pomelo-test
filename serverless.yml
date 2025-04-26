@@ -1,16 +1,35 @@
-# "org" ensures this Service is used with the correct Serverless Framework Access Key.
 org: kevinchan950120
-# "service" is the name of this project. This will also be added to your AWS resource names.
 service: kevin-pomelo-test
 
 provider:
   name: aws
   runtime: nodejs20.x
+  region: ap-southeast-1 # else it would be us-east-1
+
+  # IAM role if any
+  # iam: ...
+
+  # VPC configuration if any
+  # vpc: ...
+
+package:
+  individually: true
+
+plugins:
+  - serverless-offline
 
 functions:
-  hello:
-    handler: handler.hello
+  # API Functions
+  ## Transaction service
+  create-transaction:
+    handler: src/services/transactions/index.createTransactionHandler
     events:
       - httpApi:
-          path: /
-          method: get
+          method: POST # Indicated clearly only accept POST method
+          path: /transaction
+  retrieve-transactions:
+    handler: src/services/transactions/index.retrieveTransactionsHandler
+    events:
+      - httpApi:
+          method: GET # Indicated clearly only accept GET method
+          path: /transactions
