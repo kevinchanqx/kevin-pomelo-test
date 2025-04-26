@@ -8,6 +8,11 @@ CREATE TABLE transaction (
 	createdAt DATE,
 	updatedAt DATE
 );
+
+ALTER TABLE transaction
+ADD COLUMN "createdAt" TIMESTAMP NOT NULL DEFAULT NOW(),
+ADD COLUMN "updatedAt" TIMESTAMP NOT NULL DEFAULT NOW();
+
 insert into transaction (id, method, amount, currency, createdAt, updatedAt) values ('c8fb8faf-15e5-4de8-bf88-b14ad10b295a', 'card', 10.18, 'RM', '2022-07-09 03:30:16', '2024-09-06 19:04:46');
 insert into transaction (id, method, amount, currency, createdAt, updatedAt) values ('6f90b30e-120d-4322-a9be-b6f9759b42e5', 'card', 62.83, 'RM', '2023-04-03 17:25:16', '2024-11-11 22:39:58');
 insert into transaction (id, method, amount, currency, createdAt, updatedAt) values ('c6a8649e-769b-4062-b8e5-1565a3ba1201', 'card', 80.02, 'RM', '2023-05-09 18:21:32', '2024-10-05 03:41:11');
