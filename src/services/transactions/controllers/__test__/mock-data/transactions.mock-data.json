@@ -1,0 +1,34 @@
+[
+  {
+    "id": 2,
+    "method": "voucher",
+    "amount": "90.90",
+    "currency": "SGD",
+    "createdAt": "2025-04-26T03:06:18.481Z",
+    "status": "failed"
+  },
+  {
+    "id": 3,
+    "method": "cash",
+    "amount": "70.89",
+    "currency": "MYR",
+    "createdAt": "2025-04-26T03:06:18.481Z",
+    "status": "failed"
+  },
+  {
+    "id": 4,
+    "method": "card",
+    "amount": "65.67",
+    "currency": "SGD",
+    "createdAt": "2025-04-26T03:06:18.481Z",
+    "status": "pending"
+  },
+  {
+    "id": 5,
+    "method": "voucher",
+    "amount": "5.21",
+    "currency": "SGD",
+    "createdAt": "2025-04-26T03:06:18.481Z",
+    "status": "failed"
+  }
+]
