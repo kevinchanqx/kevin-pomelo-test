@@ -33,3 +33,9 @@ functions:
       - httpApi:
           method: GET # Indicated clearly only accept GET method
           path: /transactions
+  update-transaction-status:
+    handler: src/services/transactions/index.updateTransactionStatusHandler
+    events:
+      - httpApi:
+          method: PATCH # Indicated clearly only accept PATCH method
+          path: /transaction/{transactionId}

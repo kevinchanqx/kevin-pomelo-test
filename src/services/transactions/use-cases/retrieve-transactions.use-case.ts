@@ -16,5 +16,6 @@ export const retrieveTransactions = async () => {
     amount: transaction.amount,
     currency: transaction.currency,
     createdAt: transaction.createdAt,
+    status: transaction.status,
   }));
 };

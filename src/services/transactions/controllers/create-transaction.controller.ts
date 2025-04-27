@@ -23,7 +23,7 @@ export const createTransactionController = async (
     await createTransaction(body);
 
     return {
-      statusCode: HttpStatusCode.Ok,
+      statusCode: HttpStatusCode.Created,
       body: JSON.stringify({ message: "Transaction created successfully" }),
     };
   } catch (err) {

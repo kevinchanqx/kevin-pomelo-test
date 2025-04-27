@@ -9,11 +9,24 @@ export enum TransactionMethod {
   VOUCHER = "voucher",
 }
 
+export enum TransactionStatus {
+  NEW = "new",
+  PENDING = "pending",
+  PAID = "paid",
+  FAILED = "failed",
+}
+
+export enum TransactionCurrency {
+  MYR = "MYR",
+  SGD = "SGD",
+}
+
 type TransactionAttributes = {
-  id: string;
+  id: number;
   method: TransactionMethod;
   amount: number;
   currency: string;
+  status: TransactionStatus;
 };
 
 type TransactionCreationAttributes = TransactionAttributes;
@@ -31,13 +44,25 @@ export type Transaction = TransactionAttributes & {
 export const TransactionRepo = pgClient.define<TransactionModel>(
   "Transaction",
   {
-    id: { type: DataTypes.STRING, primaryKey: true },
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+      allowNull: false,
+    },
     method: {
-      type: DataTypes.ENUM("cash", "card", "voucher"),
+      type: DataTypes.ENUM(...Object.values(TransactionMethod)),
       allowNull: false,
     },
     amount: { type: DataTypes.DECIMAL(10, 2), allowNull: false },
-    currency: { type: DataTypes.STRING, allowNull: false },
+    currency: {
+      type: DataTypes.ENUM(...Object.values(TransactionCurrency)),
+      allowNull: false,
+    },
+    status: {
+      type: DataTypes.ENUM(...Object.values(TransactionStatus)),
+      allowNull: false,
+    },
   },
   {
     tableName: "transaction",

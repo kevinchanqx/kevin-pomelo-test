@@ -10,7 +10,7 @@ export const retrieveTransactionsController = async (
   try {
     const transactions = await retrieveTransactions();
     return {
-      statusCode: HttpStatusCode.Created,
+      statusCode: HttpStatusCode.Ok,
       body: JSON.stringify({
         transactions,
       }),
