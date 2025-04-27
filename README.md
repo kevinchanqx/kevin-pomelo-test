@@ -22,7 +22,7 @@ This project requires [Node.js](https://nodejs.org/en) and [Docker](https://www.
 
 Note that this serverless project is using version 4 in which it would requires an account or a license key.
 
-Select Login/Register and complete the authorization will done the job.
+You might run into the same prompt as the follow screenshot shown when running ```npm run dev```. Select Login/Register and complete the authorization will done the job.
 ![serverless](https://github.com/user-attachments/assets/f83e4c9f-72fa-4fb6-a81f-dd34ed8a2d99)
 
 ### Steps
