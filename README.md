@@ -19,6 +19,9 @@ A small project that to creates 3 AWS Lambda Functions which to be triggered by 
 ## Installation
 
 This project requires [Node.js](https://nodejs.org/en) and [Docker](https://www.docker.com/) to run.
+Note that this serverless project is using version 4 in which it would requires an account or a license key.
+
+Select Login/Register and complete the authorization will done the job.
 
 ### Steps
 
